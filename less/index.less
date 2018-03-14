@@ -1,0 +1,145 @@
+
+body{
+  background: white;
+  height: 2000px;
+}
+//头部样式
+#header{
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  position: fixed;
+  z-index: 100;
+
+  .container{
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    .header-left{
+      position: relative;
+      .head-link{
+        height: 65px;
+        font-size: 40px;
+        line-height: 65px;
+
+        float: left;
+        .head-link img{
+          margin-top: 8px;
+        }
+      }
+    }
+    .header-right{
+      border-color: #e7e7e7;
+      margin-top: 10px;
+      .header-list {
+        li { float: left;
+          a{
+              color: #121212;
+              padding: 10px 15px;
+              line-height: 41px;
+              font-weight: bold;
+
+          }
+          a:hover{
+            color: #e94840;
+          }
+          a:active{
+            color: #e94840;
+          }
+
+
+          img{
+            vertical-align: middle;
+          }
+          .active{
+            color: #e94840;
+            background-color: #fff;
+            margin-left: 40px;
+          }
+          #shanghu{
+            background:#e94840;
+            color: white;
+            border-radius: 5px;
+            padding: 4px 6px;
+            margin-top: 5px;
+            margin-left: 15px
+
+          }
+        }
+        #position{
+          padding-left: 60px;
+        }
+      }
+    }
+  }
+}
+
+//图片切换
+.nav-content{
+  width: 100%;
+
+
+  .nav-bg{
+    width: 100%;
+    height: 420px;
+    background: #FFF;
+    position: relative;
+    overflow: hidden;
+    .bg{
+       li {
+         float: left;
+         height: 420px;
+         overflow: hidden;
+         width: 100%;
+      }
+      .bg1{
+        background-image: url("../images/banner1.jpg");
+        height: 420px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 3;
+      }
+      .bg2{
+        background-image: url("../images/banner2.jpg");
+        height: 420px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 2;
+      }
+      .bg3{
+        background-image: url("../images/banner3.jpg");
+        height: 420px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+
+      }
+    }
+  }
+  .nav-circle{
+    height: 30px;
+    width: 100%;
+    div{
+      width: 10px;
+      height: 10px;
+      border-radius: 10px;
+      background: #7e8c8d;
+
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
