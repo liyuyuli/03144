@@ -1,6 +1,6 @@
 body {
-  background: white;
   height: 2000px;
+  background: white;
 }
 #header {
   width: 100%;
@@ -41,6 +41,7 @@ body {
 }
 #header .container .header-right .header-list li a:hover {
   color: #e94840;
+  transition: 0.5s;
 }
 #header .container .header-right .header-list li a:active {
   color: #e94840;
@@ -66,6 +67,9 @@ body {
 }
 .nav-content {
   width: 100%;
+  position: relative;
+  top: 65px;
+  margin-bottom: 100px;
 }
 .nav-content .nav-bg {
   width: 100%;
@@ -74,43 +78,316 @@ body {
   position: relative;
   overflow: hidden;
 }
+.nav-content .nav-bg .bg {
+  height: 420px;
+}
 .nav-content .nav-bg .bg li {
   float: left;
   height: 420px;
   overflow: hidden;
   width: 100%;
 }
-.nav-content .nav-bg .bg .bg1 {
+.nav-content .nav-bg .bg .bg3 {
   background-image: url("../images/banner1.jpg");
   height: 420px;
   position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 3;
+  background-position: -280px 0;
 }
 .nav-content .nav-bg .bg .bg2 {
   background-image: url("../images/banner2.jpg");
   height: 420px;
   position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 2;
+  background-position: -280px 0;
 }
-.nav-content .nav-bg .bg .bg3 {
+.nav-content .nav-bg .bg .bg1 {
   background-image: url("../images/banner3.jpg");
   height: 420px;
   position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 1;
+  background-position: -280px 0;
 }
 .nav-content .nav-circle {
-  height: 30px;
-  width: 100%;
+  position: absolute;
+  height: 10px;
+  width: 100px;
+  top: 400px;
+  left: 670px;
+  z-index: 50;
 }
-.nav-content .nav-circle div {
+.nav-content .nav-circle span {
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid #fff;
   width: 10px;
   height: 10px;
-  border-radius: 10px;
-  background: #7e8c8d;
+  border-radius: 50%;
+  background: #333;
+  margin-right: 5px;
+}
+.nav-content #nav-banner {
+  width: 180px;
+  position: absolute;
+  top: 0;
+  left: 100px;
+}
+.nav-content #nav-banner .banner-list {
+  width: 180px;
+  background: #757881;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.nav-content #nav-banner .banner-list li {
+  height: 42px;
+  line-height: 42px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  padding-left: 45px;
+  position: relative;
+}
+.nav-content #nav-banner .banner-list li p {
+  font-weight: bold;
+}
+.nav-content #nav-banner .banner-list li img {
+  position: absolute;
+  right: 35px;
+  top: 20px;
+}
+.nav-content #nav-banner .banner-list li ul {
+  position: absolute;
+  left: 180px;
+  background: rgba(255, 255, 255, 0.9);
+  width: 160px;
+  height: 420px;
+  top: 0;
+}
+.nav-content #nav-banner .banner-list li ul li {
+  height: 42px;
+  line-height: 42px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+.nav-content #nav-banner .banner-list li ul a {
+  font-weight: bold;
+  color: #121212;
+}
+.nav-content #nav-banner .banner-list li ul a:hover {
+  color: #e94840;
+  transition: color 0.5s;
+}
+.box1 {
+  width: 100%;
+  background: #fff;
+  margin-top: 60px;
+}
+.box1 .fff {
+  width: 1200px;
+  margin: 0 auto;
+  clear: both;
+}
+.box1 .fff .service .navigation {
+  text-align: center;
+}
+.box1 .fff .service .navigation span {
+  display: block;
+}
+.box1 .fff .service .navigation .serviceIndex {
+  color: #3d3838;
+  font-weight: 800;
+  font-size: 28px;
+  font-family: "Microsoft YaHei";
+}
+.box1 .fff .service .navigation .serviceType {
+  font-size: 22px;
+  margin-top: 15px;
+}
+.box1 .fff .service .navigation .serviceType a {
+  color: #3d3838;
+}
+.box1 .fff .service .navigation .serviceType a:hover {
+  color: #e94840;
+  transition: color 0.5s;
+}
+.box1 .fff .service .listHeader {
+  text-align: right;
+}
+.box1 .fff .service .listHeader .more a {
+  font-size: 18px;
+}
+.box1 .fff .service .listHeader .more a:hover {
+  color: #e94840;
+  transition: color 0.5s;
+}
+.box1 .fff .service .row {
+  margin-top: 10px;
+  margin-left: 0;
+  margin-right: 0;
+  display: flex;
+}
+.box1 .fff .service .row a {
+  margin-bottom: 0;
+}
+.box1 .fff .service .row a .serviceBorder {
+  width: 230px;
+  border: 1px solid #eaeaea;
+  background: #fff;
+  cursor: pointer;
+  height: 345px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  margin: 0 5px;
+}
+.box1 .fff .service .row a .serviceBorder img {
+  padding: 5px 10px 0;
+  width: 210px;
+  height: 210px;
+}
+.box1 .fff .service .row a .serviceBorder .service_Lists {
+  font-size: 14px;
+  padding: 10px 0;
+  font-weight: 800;
+  color: #000;
+  height: 28px;
+  margin-left: -140px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.box1 .fff .service .row a .serviceBorder .servicePrice {
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #929292;
+  padding: 5px 0;
+  font-size: 13px;
+  line-height: 18px;
+  height: 58px;
+}
+.box1 .fff .service .row a .serviceBorder .price {
+  font-size: 14px;
+  padding: 5px 5px;
+  font-weight: 600;
+  height: 20px;
+  line-height: 20px;
+  color: #fb474f;
+}
+.box1 .fff .service .row a .serviceBorder .price span {
+  font-size: 20px;
+}
+.box1 .fff .service .row a .serviceBorder .price .btn {
+  float: right;
+  padding: 0;
+  width: 76px;
+  height: 24px;
+  line-height: 22px;
+  text-align: center;
+  background: #fb474f;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 14px;
+}
+.footer {
+  width: 100%;
+  text-align: center;
+  padding-top: 60px;
+}
+.footer .baozhang span {
+  font-size: 30px;
+  font-weight: 800;
+}
+.footer .baozhang .middle {
+  color: #e94840;
+}
+.footer .baozhang h2 {
+  font-size: 22px;
+  color: #3d3838;
+  margin-top: 10px;
+}
+.footer .anquan {
+  width: 100%;
+  height: 66px;
+  background: #fff;
+  padding-top: 20px;
+}
+.footer .anquan ul {
+  width: 420px;
+  display: flex;
+  margin-left: 500px;
+}
+.footer .anquan ul li {
+  width: 420px;
+  flex: 33.33%;
+}
+.footer .anquan ul li img {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.footer .hotcity {
+  width: 100%;
+}
+.footer .hotcity span {
+  display: block;
+  float: left;
+  font-size: 18px;
+  font-weight: 800;
+  margin-left: 80px;
+}
+.footer .hotcity .hotcityList {
+  margin-left: 200px;
+}
+.footer .hotcity .hotcityList ul {
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+}
+.footer .hotcity .hotcityList ul li a {
+  font-size: 18px;
+  color: #898989;
+  font-weight: 200;
+  cursor: pointer;
+}
+.shops {
+  width: 100%;
+  padding-top: 50px;
+}
+.shops #hit {
+  bottom: 20px;
+  text-align: left;
+  font-weight: bold;
+  width: 1200px;
+  margin: 0 auto;
+  background: none;
+  color: #1d1515;
+  font-size: 18px;
+}
+.shops .hezuo {
+  width: 1200px;
+  margin: 0 auto;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.shops .hezuo li {
+  flex: 1;
+  ursor: pointer;
+  height: 60px;
+  width: 120px;
+}
+.shops .hezuo li img {
+  height: 60px;
+  width: 120px;
+  border: 1px solid lavender;
+}
+.item {
+  margin-top: 50px;
+}
+.item p {
+  margin-left: 80px;
+  color: #898989;
 }

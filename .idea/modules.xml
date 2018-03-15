@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../jquery/.idea/daowei.iml" filepath="$PROJECT_DIR$/../jquery/.idea/daowei.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/daowei.iml" filepath="$PROJECT_DIR$/.idea/daowei.iml" />
     </modules>
   </component>
 </project>

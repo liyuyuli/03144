@@ -1,0 +1,124 @@
+body {
+  height: 2000px;
+  background: white;
+}
+#header {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  position: fixed;
+  z-index: 100;
+}
+#header .container {
+  width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+#header .container .header-left {
+  position: relative;
+}
+#header .container .header-left .head-link {
+  height: 65px;
+  font-size: 40px;
+  line-height: 65px;
+  float: left;
+}
+#header .container .header-left .head-link .head-link img {
+  margin-top: 8px;
+}
+#header .container .header-right {
+  border-color: #e7e7e7;
+  margin-top: 10px;
+}
+#header .container .header-right .header-list li {
+  float: left;
+}
+#header .container .header-right .header-list li a {
+  color: #121212;
+  padding: 10px 15px;
+  line-height: 41px;
+  font-weight: bold;
+}
+#header .container .header-right .header-list li a:hover {
+  color: #e94840;
+  transition: 0.5s;
+}
+#header .container .header-right .header-list li a:active {
+  color: #e94840;
+}
+#header .container .header-right .header-list li img {
+  vertical-align: middle;
+}
+#header .container .header-right .header-list li .active {
+  color: #e94840;
+  background-color: #fff;
+  margin-left: 40px;
+}
+#header .container .header-right .header-list li #shanghu {
+  background: #e94840;
+  color: white;
+  border-radius: 5px;
+  padding: 4px 6px;
+  margin-top: 5px;
+  margin-left: 15px;
+}
+#header .container .header-right .header-list #position {
+  padding-left: 60px;
+}
+.nav_list {
+  width: 1200px;
+  position: relative;
+  height: 85px;
+  top: 65px;
+  margin: 0 auto;
+}
+.nav_list span {
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  line-height: 85px;
+}
+.nav_list .list1 {
+  color: #e94840;
+}
+.centerleft {
+  position: relative;
+  top: 85px;
+  width: 960px;
+}
+.centerleft .curauto {
+  border: 1px solid #e5e5e5;
+  width: 960px;
+  margin: auto;
+}
+.centerleft .curauto img {
+  width: 160px;
+  height: 160px;
+  margin: 30px;
+  border: 1px solid #e5e5e5;
+}
+.explain {
+  position: relative;
+  top: 160px;
+  width: 960px;
+  clear: both;
+  background: #fff;
+  padding: 30px 20px;
+  border: 1px solid #e5e5e5;
+  margin-top: 10px;
+}
+.explain div h {
+  border-bottom: 3px solid #fb474f;
+  padding: 5px;
+  margin-top: 10px;
+  width: 66px;
+  display: block;
+}
+.explain div p {
+  line-height: 24px;
+  margin: 15px 10px 5px;
+  font-size: 14px;
+  background-color: #fff;
+  border: none;
+  border-radius: 0;
+}
