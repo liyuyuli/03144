@@ -1,5 +1,4 @@
 body {
-  height: 2000px;
   background: white;
 }
 #header {
@@ -78,34 +77,138 @@ body {
   cursor: pointer;
   line-height: 85px;
 }
+.nav_list span a {
+  color: black;
+  font-weight: 800;
+}
 .nav_list .list1 {
   color: #e94840;
 }
-.centerleft {
+.center_left {
   position: relative;
   top: 85px;
   width: 960px;
+  background: white;
+  overflow: hidden;
+  left: 75px;
 }
-.centerleft .curauto {
+.center_left .curauto {
   border: 1px solid #e5e5e5;
+  float: left;
   width: 960px;
   margin: auto;
 }
-.centerleft .curauto img {
+.center_left .curauto img {
   width: 160px;
   height: 160px;
   margin: 30px;
   border: 1px solid #e5e5e5;
+  float: left;
+}
+.center_left .curauto p {
+  margin-top: 30px;
+  font-size: 18px;
+}
+.center_left .curauto .price {
+  font-size: 10px;
+}
+.center_left .curauto .price .seconds {
+  font-size: 18px;
+  color: #e94840;
+}
+.center_left .curauto .price .old {
+  margin-left: 20px;
+}
+.center_left .curauto .price .old .yuan {
+  text-decoration: line-through;
+}
+.center_left .curauto .sell {
+  font-size: 16px;
+}
+.center_left .curauto .sell span {
+  color: #e94840;
+}
+.center_left .curauto .xiazai {
+  float: right;
+}
+.center_left .curauto .xiazai img {
+  display: block;
+  width: 115px;
+  height: 115px;
+  margin-top: -115px;
+  margin-right: 60px;
+}
+.center_left .curauto .xiazai p {
+  font-size: 16px;
+  position: relative;
+  display: block;
+  height: 30px;
+  top: -20px;
+  left: 65px;
+}
+.center_left .curauto .xiazai .yuyue {
+  margin-top: 5px;
+  margin-left: -5px;
+  color: red;
+}
+.center_right {
+  float: right;
+  left: -80px;
+  top: -153px;
+  position: relative;
+}
+.center_right .right-1 {
+  width: 230px;
+  border: 1px solid #e5e5e5;
+  background: #fff;
+  text-align: center;
+}
+.center_right .right-1 span {
+  color: red;
+  margin-left: 70px;
+}
+.center_right .right-1 h3 {
+  font-size: 20px;
+  border-bottom: 1px solid #e5e5e5;
+  height: 60px;
+  line-height: 60px;
+}
+.center_right .right-1 img {
+  display: block;
+  margin: 40px 80px;
+  width: 80px;
+  height: 80px;
+}
+.center_right .right-1 .jiazheng {
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+.center_right .right-1 p {
+  font-size: 16px;
+  height: 36px;
+}
+.center_right .right-2 {
+  margin-top: 10px;
+  height: 290px;
+  width: 230px;
+  background-image: url("../images/tuijianfuwushang_06.jpg");
+  background-repeat: no-repeat;
+}
+.center_right .right-2 img {
+  margin: 50px 0 0 50px;
+  width: 130px;
+  height: 130px;
 }
 .explain {
+  box-sizing: border-box;
   position: relative;
-  top: 160px;
+  top: -570px;
+  left: 75px;
   width: 960px;
   clear: both;
   background: #fff;
-  padding: 30px 20px;
+  padding: 20px 10px;
   border: 1px solid #e5e5e5;
-  margin-top: 10px;
 }
 .explain div h {
   border-bottom: 3px solid #fb474f;
@@ -113,12 +216,83 @@ body {
   margin-top: 10px;
   width: 66px;
   display: block;
+  margin-left: 5px;
+  margin-bottom: 15px;
 }
 .explain div p {
+  display: block;
   line-height: 24px;
-  margin: 15px 10px 5px;
+  margin-left: 10px;
   font-size: 14px;
   background-color: #fff;
   border: none;
   border-radius: 0;
+}
+.footer {
+  width: 100%;
+  text-align: center;
+  padding-top: 60px;
+  margin-top: -600px;
+}
+.footer .baozhang span {
+  font-size: 30px;
+  font-weight: 800;
+}
+.footer .baozhang .middle {
+  color: #e94840;
+}
+.footer .baozhang h2 {
+  font-size: 22px;
+  color: #3d3838;
+  margin-top: 10px;
+}
+.footer .anquan {
+  width: 100%;
+  height: 66px;
+  background: #fff;
+  padding-top: 20px;
+}
+.footer .anquan ul {
+  width: 420px;
+  display: flex;
+  margin-left: 500px;
+}
+.footer .anquan ul li {
+  width: 420px;
+  flex: 33.33%;
+}
+.footer .anquan ul li img {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+.footer .hotcity {
+  width: 100%;
+}
+.footer .hotcity span {
+  display: block;
+  float: left;
+  font-size: 18px;
+  font-weight: 800;
+  margin-left: 80px;
+}
+.footer .hotcity .hotcityList {
+  margin-left: 200px;
+}
+.footer .hotcity .hotcityList ul {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+.footer .hotcity .hotcityList ul li {
+  margin: 8px 0;
+}
+.footer .hotcity .hotcityList ul li a {
+  font-size: 18px;
+  color: #898989;
+  font-weight: 200;
+  cursor: pointer;
+}
+.item p {
+  margin-left: 80px;
+  color: #898989;
 }

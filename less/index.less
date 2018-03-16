@@ -10,7 +10,7 @@ body{
   background: #fff;
   border-bottom: 1px solid #e5e5e5;
   position: fixed;
-  z-index: 100;
+  z-index: 200;
 
   .container{
     width: 1200px;
@@ -82,22 +82,69 @@ body{
   position: relative;
   top: 65px;
   margin-bottom: 100px;
-  .nav-bg{
+  .swiper-container {
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+  .bg1{
+    background-image: url("../images/banner1.jpg");
+    height: 420px;
+    background-position: -280px 0;
+
+  }
+  .bg2{
+    background-image: url("../images/banner2.jpg");
+    height: 420px;
+    background-position: -280px 0;
+
+
+
+  }
+  .bg3{
+    background-image: url("../images/banner3.jpg");
+    height: 420px;
+    background-position: -280px 0;
+
+
+  }
+  .swiper-pagination-bullet-active{
+   background: white;
+  }
+/*  .swiper-container{
     width: 100%;
     height: 420px;
     background: #FFF;
     position: relative;
     overflow: hidden;
-    .bg{
+    .swiper-wrapper{
       height: 420px;
-      li {
+      .swiper-slide{
          float: left;
          height: 420px;
          overflow: hidden;
          width: 100%;
 
       }
-      .bg3{
+      .bg1{
         background-image: url("../images/banner1.jpg");
         height: 420px;
         position: absolute;
@@ -113,7 +160,7 @@ body{
 
 
       }
-      .bg1{
+      .bg3{
         background-image: url("../images/banner3.jpg");
         height: 420px;
         position: absolute;
@@ -125,7 +172,7 @@ body{
     }
   }
   //小圆点
-  .nav-circle{
+  . nav-circle{
     position: absolute;
     height: 10px;
     width: 100px;
@@ -147,7 +194,7 @@ body{
     }
 
 
-  }
+  }*/
 
   //一级菜单
   #nav-banner{
@@ -155,6 +202,7 @@ body{
     position: absolute;
     top:0;
     left: 100px;
+    z-index: 100;
     .banner-list{
       width: 180px;
       background: #757881;
@@ -173,10 +221,17 @@ body{
         p{
           font-weight: bold;
         }
-        img{
+        .right_icon{
           position: absolute;
           right: 35px;
           top: 20px;
+        }
+        .icon{
+          position: absolute;
+          right: 0px;
+          top: 20px;
+          display: none;
+
         }
         //二级菜单
         ul{
@@ -187,7 +242,6 @@ body{
           height: 420px;
           top:0;
           li{
-
             height: 42px;
             line-height: 42px;
             color: #fff;
@@ -265,14 +319,11 @@ body{
         margin-left: 0;
         margin-right: 0;
         display: flex;
-
-
         a{
           //position: relative;
           margin-bottom: 0;
 
           .serviceBorder {
-
             width: 230px;
             border: 1px solid #eaeaea;
             background: #fff;
@@ -282,7 +333,7 @@ body{
             justify-content: space-around;
             flex-direction: column;
             text-align: center;
-            justify-content: center;
+            //justify-content: center;
             margin: 0 5px;
             img {
                padding: 5px 10px 0;
@@ -296,19 +347,38 @@ body{
               color: #000;
               height: 28px;
               margin-left: -140px;
-              overflow: hidden;
-              white-space: nowrap;
-              text-overflow: ellipsis
+              //overflow: hidden;
+              //white-space: nowrap;
+              //text-overflow: ellipsis;
+              //display: -webkit-box;
+              //-webkit-box-orient: vertical;
+              //-webkit-line-clamp: 3;
+
             }
             .servicePrice{
-              white-space: normal;
-              overflow: hidden;
-             text-overflow: ellipsis;
+              //white-space: normal;
+              //overflow: hidden;
+              //text-overflow: ellipsis;
+              //color: #929292;
+              //padding: 5px 0;
+              //font-size: 13px;
+              //line-height: 18px;
+              //height: 58px;
+              //display: -webkit-box;
+              //-webkit-box-orient: vertical;
+              //-webkit-line-clamp: 3;
               color: #929292;
               padding: 5px 0;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              -webkit-box-orient: vertical;
+              word-break: break-all;
               font-size: 13px;
               line-height: 18px;
               height: 58px;
+
             }
             .price{
               font-size: 14px;
@@ -400,13 +470,12 @@ body{
   }
     .hotcityList{
       margin-left: 200px;
-
-
       ul{
-        width: 1200px;
+        width: 90%;
         display: flex;
         justify-content: space-between;
         li{
+           margin:8px 0;
           a{
             font-size: 18px;
             color: #898989;
