@@ -1,0 +1,80 @@
+#header {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  z-index: 200;
+}
+#header .container {
+  width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+#header .container .header-left {
+  position: relative;
+}
+#header .container .header-left .head-link {
+  height: 65px;
+  font-size: 40px;
+  line-height: 65px;
+  float: left;
+}
+#header .container .header-left .head-link .head-link img {
+  margin-top: 8px;
+}
+#header .container .header-right {
+  border-color: #e7e7e7;
+  margin-top: 10px;
+}
+#header .container .header-right .header-list li {
+  float: left;
+}
+#header .container .header-right .header-list li a {
+  color: #121212;
+  padding: 10px 15px;
+  line-height: 41px;
+  font-weight: bold;
+}
+#header .container .header-right .header-list li a:hover {
+  color: #e94840;
+  transition: 0.5s;
+}
+#header .container .header-right .header-list li a:active {
+  color: #e94840;
+}
+#header .container .header-right .header-list li img {
+  vertical-align: middle;
+}
+#header .container .header-right .header-list li .active {
+  color: #e94840;
+  background-color: #fff;
+  margin-left: 40px;
+}
+#header .container .header-right .header-list li #shanghu {
+  background: #e94840;
+  color: white;
+  border-radius: 5px;
+  padding: 4px 6px;
+  margin-top: 5px;
+  margin-left: 15px;
+}
+#header .container .header-right .header-list #position {
+  padding-left: 60px;
+}
+.hit {
+  margin: 10px 0 auto;
+  height: 140px;
+}
+.hit .hit_center {
+  width: 1200px;
+  height: 140px;
+  line-height: 140px;
+  margin: 0 auto;
+}
+.hit .hit_center .hit_left {
+  float: left;
+  height: 120px;
+}
+.hit .hit_center .hit_right {
+  float: left;
+  height: 120px;
+}
