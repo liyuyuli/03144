@@ -80,62 +80,38 @@
     <div class="nav-center">
       <div class="service-link fuwu" id="fuwu">
 
-
-
       </div>
       <div class="service-link shop">
         <h3><i>商家简介</i></h3>
-        <div class="link-item">
-          <span class="shopName">
-            上海家谐网络科技有限公司
-            <img src="bbb/images/service/renzheng.jpg"/>
-          </span>
-          <span class="desc">
-            云家政是家政服务在线预订平台。我们的目标是让每个家庭都能获得诚信、便捷、有保障的家政服务。云家政拥有国内最大的实名认证家庭服务员数据库，目前平台上有超过100000名专业服务人员；数百个家政服务商，遍布全国主要城市各个社区。 云家政倡导简单、轻松的生活方式。通过把分散的家政服务能力汇集和分配，让中国家庭获得诚信、便捷、有保障的家政服务，解决日常生活中的麻烦事，把更多时间留给自己和家人，提高生活品质。
-          </span>
+        <div class="link-item" id="link">
+
         </div>
       </div>
-      <div class="service-link users">
+      <div class="service-link users" id="users">
         <h3><i>用户评论</i><em>（10300条评论）</em></h3>
         <div class="conments">
           <!--评论列表-->
-          <div class="conment">
-            <img src="bbb/images/service/0.jpg">
-            <ul>
-              <li class="username">U1244545</li>
-              <li class="star">
-                <span >
-                    <img src="bbb/images/service/red_star.png">
-                    <img src="bbb/images/service/red_star.png">
-                    <img src="bbb/images/service/red_star.png">
-                    <img src="bbb/images/service/red_star.png">
-                    <img src="bbb/images/service/red_star.png">
-                </span>
-                <span><em>2018-03-15</em></span>
-              </li>
-              <li class="say">服务专业，态度热情，准时到达</li>
-              <li class="position">
-                <img src="bbb/images/service/position.jpg">
-                北京  西城区
-              </li>
-            </ul>
+          <div class="conment" id="comment">
+
+
+
           </div>
           <div class="pages">
-            <a href="" class="up nopage">上一页</a>
+            <a href="javascript:" class="up nopage">上一页</a>
             <div class="showpage">
-              <a href="" class="num act">1</a>
-              <a href="" class="num">2</a>
-              <a href="" class="num">3</a>
-              <a href="" class="num">4</a>
-              <a href="" class="num">5</a>
-              <a href="" class="num">6</a>
-              <a href="" class="num">7</a>
-              <a href="" class="num">8</a>
-              <a href="" class="num">9</a>
-              <a href="" class="num">10</a>
+              <a href="javascript:" class="num act">1</a>
+              <a href="javascript:" class="num">2</a>
+              <a href="javascript:" class="num">3</a>
+              <a href="javascript:" class="num">4</a>
+              <a href="javascript:" class="num">5</a>
+              <a href="javascript:" class="num">6</a>
+              <a href="javascript:" class="num">7</a>
+              <a href="javascript:" class="num">8</a>
+              <a href="javascript:" class="num">9</a>
+              <a href="javascript:" class="num">10</a>
               ...
             </div>
-            <a href="" class="down">下一页></a>
+            <a href="javascript:" class="down">下一页></a>
           </div>
         </div>
 
@@ -219,6 +195,7 @@
 <script type="text/javascript" src="./js/template-web.js"></script>
 
 <script type="text/javascript">
+  var page =1
   $(function () {
     $(document).scroll(function () {
       if($(this).scrollTop()>=71){
@@ -229,9 +206,138 @@
     })
     $.get('/getItem',function (data) {
       console.log(data);
-      $('.htit-left').append(template('temp03',{data:data}))
+      $('#htit-left').append(template('temp03',{data:data}))
+      $('#fuwu').append(template('temp04',{data:data}))
+      console.log(data);
+      $('#link').append(template('temp05',{data:data}))
 
     })
+
+    $.get('/getComment?page='+page,function (data) {
+      $('#comment').html(template('temp06',{data:data}))
+    })
+    $('.num').click(function () {
+       //分页 获取下标返回一个数组
+
+       var index = $(this).index()
+        //每次点击页面的页数
+        page = index+1
+        $('.showpage>a').removeClass('act')
+        $(this).addClass('act')
+       acor(page)
+      // acss(page)
+       $.get('/getComment?page='+page,function (data) {
+         $('#comment').html(template('temp06',{data:data}))
+       })
+    })
+    $('.up').click(function () {
+      scrollPage('true')
+    })
+    $('.down').click(function () {
+      scrollPage('false')
+    })
+  //  上下键点击执行翻页
+    function scrollPage(type) {
+      if(type === 'true'){
+        page--
+        acor(page)
+        var index = page-1
+        $('.showpage>a').removeClass('act')
+
+
+        $('.showpage>a').each(function () {
+          console.log($('.showpage>a')[index]);
+          console.log(index);
+          $('.showpage>a')[index].className = 'act'
+        })
+
+
+        $.get('/getComment?page='+page,function (data) {
+          $('#comment').html(template('temp06',{data:data}))
+          console.log(data);
+        })
+      }
+      if(type==='false'){
+        $('.up').removeClass('nopage')
+        page++
+        acor(page)
+        var index = page -1
+        console.log($('.showpage>a')[index]);
+        $('.showpage>a').removeClass('act')
+
+        $('.showpage>a').each(function () {
+          $('.showpage>a')[index].className = 'act'
+        })
+        $.get('/getComment?page='+page,function (data) {
+          $('#comment').html(template('temp06',{data:data}))
+          console.log(data);
+        })
+      }
+    }
+    function acor() {
+      if(page<=1){
+        $('.up').addClass('nopage')
+        page=1
+      } if(page>=9){
+        $('.down').addClass('nopage')
+        page=9
+      }else{
+        $('.down').removeClass('nopage')
+      }
+    }
+
+
+
+    // 上下键点击执行翻页
+  /*  $('.up').click(function () {
+      scrollPage('true')
+    })*/
+
+    // $('.down').click(function () {
+    //   scrollPage('false')
+    // })
+
+// 上下翻页函数
+/*    function scrollPage(type) {
+      // if (type === 'true') {
+      //   page--
+      //   acss(page)
+      //   var index = page - 1
+      //   $('.showpage>a').removeClass('act')
+      //   $('.showpage>a').each(function(){
+      //     $('.showpage>a')[index].className = 'act'
+      //   })
+      //   $.get('/getComment?page='+page,function (data) {
+      //     $('#comment').html(template('temp06',{data:data}))
+      //   })
+      // }
+      if (type === 'false') {
+        $('.up').removeClass('nopage')
+        page++
+        acss(page)
+        var index = page - 1
+        $('.showpage>a').removeClass('act')
+        $('.showpage>a').each(function(){
+          $('.showpage>a')[index].className = 'act'
+        })
+        $.get('/getComment?page='+page,function (data) {
+          $('#comment').html(template('temp06',{data:data}))
+        })
+      }
+    }*/
+// 边界切换样式
+  /*  function acss () {
+      if(page <= 1){
+        $('.up').addClass('nopage') //nopage 灰色
+        page = 1
+      }
+      if(page>=9){
+        $('.down').addClass('nopage')
+        page = 9
+      }
+      else{$('.down').removeClass('nopage')}
+    }*/
+
   })
 </script>
 <script id="temp03" type="text/html">
@@ -251,20 +357,61 @@
 
 </script>
 <script id="temp04" type="text/html">
+  {{each data.data}}
   <h3 ><i>服务项目</i></h3>
-        <div class="link-item">
-          <img src="{{data.imgUrl}}">
-          <div class="link-desc">
-            <span>{{data.name}}</span>
-            <span>{{data.desc}}
+  <div class="link-item">
+    <a href="/fuwu.html"><img src="{{$value.imgUrl}}"></a>
+
+    <div class="link-desc">
+      <span>{{$value.name}}</span>
+      <span>{{$value.desc}}
             </span>
-            <span>
-              <i class="price">{{data.price}}<em>元/小时</em></i>
-              <i class="oldpic">原价<em>{{data.oldPrice}}</em></em></i>
-              <i class="sold">已售出{{data.soldCount}}</i>
+      <span>
+              <i class="price">{{$value.price}}<em>元/小时</em></i>
+              <i class="oldpic">原价<em>{{$value.oldPrice}}</em></em></i>
+              <i class="sold">已售出{{$value.soldCount}}</i>
             </span>
-          </div>
-        </div>
+    </div>
+  </div>
+  {{/each}}
+
+</script>
+<script id="temp05" type="text/html">
+  {{each data.data}}
+  <span class="shopName">
+            {{$value.company}}
+            <img src="bbb/images/service/renzheng.jpg"/>
+          </span>
+  <span class="desc">
+        {{$value.profile}}
+          </span>
+  {{/each}}
+
+</script>
+<script id="temp06" type="text/html">
+  {{each data.data}}
+  <img src="{{$value.iconUrl}}">
+  <ul>
+    <li class="username">U1244545</li>
+    <li class="star">
+                <span >
+
+                    <img src="bbb/images/service/red_star.png">
+                    <img src="bbb/images/service/red_star.png">
+                    <img src="bbb/images/service/red_star.png">
+                    <img src="bbb/images/service/red_star.png">
+                    <img src="bbb/images/service/red_star.png">
+                </span>
+      <span><em>2018-03-15</em></span>
+    </li>
+    <li class="say">{{$value.comment}}</li>
+    <li class="position">
+      <img src="bbb/images/service/position.jpg">
+      {{$value.city}}  {{$value.area}}
+    </li>
+  </ul>
+  {{/each}}
+
 </script>
 </body>
 </html>

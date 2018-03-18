@@ -368,6 +368,9 @@ body {
   font-size: 14px;
   margin-top: -5px;
 }
+.box1 .fff .service .row a:hover {
+  box-shadow: 5px 5px 10px #cccccc;
+}
 .footer {
   width: 100%;
   text-align: center;

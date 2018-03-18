@@ -10,7 +10,10 @@ const sSchema = new mongoose.Schema({
     commentCount:{type:Number},
     accept:{type:String},
     praise:{type:String},
-    imgUrl:{type:String}
+    imgUrl:{type:String},
+    company:{type :String},
+     profile:{type:String}
+
 },{
   collection:'items'
 })

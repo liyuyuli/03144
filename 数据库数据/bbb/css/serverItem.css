@@ -225,11 +225,7 @@
   padding: 25px;
   cursor: pointer;
 }
-#service-item .nav .nav-center .service-link.fuwu .link-item a {
-  width: 148px;
-  height: 200px;
-}
-#service-item .nav .nav-center .service-link.fuwu .link-item a img {
+#service-item .nav .nav-center .service-link.fuwu .link-item img {
   float: left;
   border: 1px solid #e5e5e5;
   width: 148px;
